@@ -169,6 +169,21 @@ const ResultsPanel: React.FC<ResultsPanelProps> = ({ result }) => {
                         {result.explanation}
                      </p>
                   </div>
+                  {/* Abnormalities Section */}
+                  {result.abnormalities && (
+                  <div className="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl mb-8 border dark:border-slate-700">
+                  <p className="text-sm font-bold text-slate-400 uppercase mb-3 flex items-center gap-2">
+                  <AlertCircle size={14} />
+                  Detected Abnormalities
+                  </p>
+
+                  <ul className="list-disc pl-5 space-y-1 text-slate-600 dark:text-slate-300 text-sm">
+                  {result.abnormalities.map((item: string, index: number) => (
+                  <li key={index}>{item}</li>
+                  ))}
+                  </ul>
+                 </div>
+                  )}
 
                   <div className="space-y-4">
                      <button 
