@@ -28,14 +28,23 @@ const App: React.FC = () => {
 
     setTimeout(() => {
       setDemoResult({
-        classification: Math.random() > 0.5 ? "Pneumonia Detected" : "Normal",
-        confidence: (92 + Math.random() * 5).toFixed(2) + "%",
-        detection: "Abnormal region detected in left lung",
-        gradcam: "AI heatmap generated",
-        accuracy: "93%",
-        precision: "91%",
-        recall: "94%",
-        f1_score: "92%"
+      classification: Math.random() > 0.5 ? "Pneumonia Detected" : "Normal",
+      confidence: (92 + Math.random() * 5).toFixed(2) + "%",
+      detection: "Abnormal region detected in left lung",
+      gradcam: "AI heatmap generated",
+
+  // ✅ ADD THIS
+      abnormalities: [
+      "Opacity in left lung",
+      "Possible consolidation",
+      "Mild infiltration",
+      "No pleural effusion"
+      ],
+
+      accuracy: "93%",
+      precision: "91%",
+      recall: "94%",
+      f1_score: "92%"
       });
 
       setDemoAnalyzing(false);
